@@ -7,11 +7,7 @@ job('DSL Test') {
     triggers {
         scm('H/5 * * * *')
     }
-    wrappers {
-        git('Default') // this is the name of the GIT installation in 
-                         // Manage Jenkins -> Configure Tools -> NodeJS Installations -> Name
-    }
     steps {
-        shell("git status")
+        shell("echo 'hello'")
     }
 }
