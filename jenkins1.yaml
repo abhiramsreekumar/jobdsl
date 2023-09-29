@@ -1,0 +1,238 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - basicSSHUserPrivateKey:
+          id: "1219e698-6002-4cb5-b50f-a9ba3dd028de"
+          privateKeySource:
+            directEntry:
+              privateKey: "{AQAAABAAAAHAQ68QyYbdRExjjYPUs7AUlWj8XMnBoaVwxFLP6ftrHoBnzntXH+sTdel4ncxr7czIdKx7+rzpZybQRYtq+dz9UuMbW/dGVy1L1OUbIt0xk9VMmC26Ig/WGltKMwKCYhpfUQyG3bVoH3P9l4Q4noXiqyRisOemJVD8xVeV0Z/8tdH0lJluhdY8TR+RdOmMq6sxGQd4oWb6jDLCqt6P+eC7s+wKyoq8IbxaNfcOUrU4jzlsLCGrPmTNOR4pXXVNmnbTBKUYC4AOhwgMr+3KPWqbz6W2wimW5TEQ8mIlplohaNL6MpLrKNexHODv83X86xsrMLOLAKQ4Q4+0lpwezleMXFXd7QpLI/3yEumIOaEimqGKEdZ68igp9dKodtv6pKDC+8VyYtXMgkUGItsArVYmtAAgBtjlBX7FaOyUzgzU877Uxurf88Ie/B8mi/LQMFPXlQESI7rVnT/S+8VOAeJZ1HPmcYH257jzQZEsu6X0u13zniNjCkpgrmfkN2mcT/RrWrsXpXPyV0cfScAUFObw0SW/LhWI+4wj1DslcaK7QTj3NGipWB0JT1XMI9YyT3KpdRHX+mc7xflaeuOPN0JCoM6zAbMbqH7yL8nK3fLWzi4=}"
+          scope: GLOBAL
+          username: "ec2-user"
+      - usernamePassword:
+          id: "4c2006f8-30ff-403b-99dd-4bb84416bf87"
+          password: "{AQAAABAAAAAgH3z14Urk77nqcYuMu5Pjhe0pzvHdLbzmGrRaoQpYtRUEDPZr7poH1OTteWkG8n5w}"
+          scope: GLOBAL
+          username: "meeraj314@gmail.com"
+      - usernamePassword:
+          id: "89c68dfb-1c56-4b86-b827-17751543754e"
+          password: "{AQAAABAAAAAwrSzOA1vzXn0iBHgp1kCxggXII2Jes7a0X/Bo7k9uNcCEsIfcloKCPwZZzwUkokttL+RRtaeXQjPZA8liaLkC2A==}"
+          scope: GLOBAL
+          username: "abhiramsreekumar"
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  disabledAdministrativeMonitors:
+  - "hudson.util.DoubleLaunchChecker"
+  labelAtoms:
+  - name: "Slave Agent"
+  - name: "built-in"
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  noUsageStatistics: true
+  nodes:
+  - permanent:
+      launcher:
+        ssh:
+          credentialsId: "1219e698-6002-4cb5-b50f-a9ba3dd028de"
+          host: "172.31.49.233"
+          port: 22
+          sshHostKeyVerificationStrategy:
+            manuallyTrustedKeyVerificationStrategy:
+              requireInitialManualTrust: true
+      name: "Slave Agent"
+      numExecutors: 2
+      remoteFS: "/home/ec2-user"
+      retentionStrategy: "always"
+  numExecutors: 0
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "abhi"
+        name: "Abhiram"
+        properties:
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - "experimentalFlags"
+        - mailer:
+            emailAddress: "abhiramsreekumar314@gmail.com"
+        - "apiToken"
+        - "favorite"
+  slaveAgentPort: -1
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+globalCredentialsConfiguration:
+  configuration:
+    providerFilter: "none"
+    typeFilter: "none"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  gitHooks:
+    allowedOnAgents: false
+    allowedOnController: false
+  gitHostKeyVerificationConfiguration:
+    sshHostKeyVerificationStrategy: "knownHostsFileVerificationStrategy"
+  sSHD:
+    port: -1
+  scriptApproval:
+    approvedScriptHashes:
+    - "SHA512:3087dc80e8cfe33e716ad3f066676993db9b998ac58d75d6a17a5290da8db844e77e73495066790919dbce35d88d6688d7c9ca03e6a51d4903a3a1e492863e22"
+    - "SHA512:ef71612dc7ce7fdb1a24893e82089066e9612a9bb83aaee0f9a500ff1a71630982171c389f0e3fd55dcea2b3689ff1a17d32a377eb53e374bea026c49fae3c2a"
+  updateSiteWarningsConfiguration:
+    ignoredWarnings:
+    - "SECURITY-2789-2"
+    - "SECURITY-2789-1"
+unclassified:
+  bitbucketEndpointConfiguration:
+    endpoints:
+    - bitbucketCloudEndpoint:
+        enableCache: false
+        manageHooks: false
+        repositoriesCacheDuration: 0
+        teamCacheDuration: 0
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  buildStepOperation:
+    enabled: false
+  email-ext:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: |-
+      $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+      <pre>^${BUILD_LOG, maxLines=9999, escapeHtml=false}</pre>
+    defaultContentType: "text/plain"
+    defaultRecipients: "abhiramsreekumar314@gmail.com"
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    defaultTriggerIds:
+    - "hudson.plugins.emailext.plugins.trigger.AlwaysTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
+    mailAccount:
+      credentialsId: "4c2006f8-30ff-403b-99dd-4bb84416bf87"
+      smtpHost: "smtp.gmail.com"
+      smtpPort: "465"
+      useSsl: true
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: -1
+    precedenceBulk: false
+    watchingEnabled: false
+  enrichedSummaryConfig:
+    enrichedSummaryEnabled: false
+    httpClientDelayBetweenRetriesInSeconds: 1
+    httpClientMaxRetries: 3
+    httpClientTimeoutInSeconds: 1
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  ghprbTrigger:
+    adminlist: "abhiramsreekumar"
+    autoCloseFailedPullRequests: false
+    cron: "H/5 * * * *"
+    extensions:
+    - ghprbSimpleStatus:
+        addTestResults: false
+        showMatrixStatus: false
+    githubAuth:
+    - credentialsId: "89c68dfb-1c56-4b86-b827-17751543754e"
+      description: "Anonymous connection"
+      id: "c1b5b2c7-8ab9-48f8-afff-829d4090de2e"
+      secret: "{AQAAABAAAAAQJ1rxA2bR7OAvdgLYlBodhy8syDiz0vJ8adoIvJkJ4jI=}"
+      serverAPIUrl: "https://api.github.com"
+    manageWebhooks: true
+    okToTestPhrase: ".*ok\\W+to\\W+test.*"
+    requestForTestingPhrase: "Auto Reply from Jenkins"
+    retestPhrase: ".*build.*"
+    skipBuildPhrase: ".*\\[skip\\W+ci\\].*"
+    useComments: false
+    useDetailedComments: false
+    whitelistPhrase: ".*add\\W+to\\W+whitelist.*"
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "http://ec2-3-94-213-209.compute-1.amazonaws.com:8080/github-webhook/"
+  globalTimeOutConfiguration:
+    operations:
+    - "abortOperation"
+    overwriteable: false
+  injectionConfig:
+    allowUntrusted: false
+    checkForBuildAgentErrors: false
+    enabled: false
+    enforceUrl: false
+    injectCcudExtension: false
+    injectMavenExtension: false
+  junitTestResultStorage:
+    storage: "file"
+  location:
+    adminAddress: "DevOps Admin <nobody@nowhere>"
+    url: "http://ec2-3-94-213-209.compute-1.amazonaws.com:8080/"
+  mailer:
+    authentication:
+      password: "{AQAAABAAAAAgmrQkemz4jY8vd/x0yDMbvX95Zs9/NYasRFhar7nSnWKhpZz3oFypA5yidRZNVLC/}"
+      username: "meeraj314@gmail.com"
+    charset: "UTF-8"
+    smtpHost: "smtp.gmail.com"
+    smtpPort: "465"
+    useSsl: true
+    useTls: false
+  pollSCM:
+    pollingThreadCount: 10
+  prismConfiguration:
+    theme: PRISM
+  scmGit:
+    addGitTagAction: false
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  timestamper:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+    - home: "git"
+      name: "newgit"
+    - home: "git"
+      name: "testnewgit"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"
