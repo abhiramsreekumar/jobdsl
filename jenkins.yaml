@@ -230,9 +230,7 @@ tool:
     - home: "git"
       name: "Default"
     - home: "git"
-      name: "newgit"
-    - home: "git"
-      name: "testnewgit"
+      name: "newestgit"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
