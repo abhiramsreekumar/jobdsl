@@ -102,8 +102,6 @@ security:
     allowedOnController: false
   gitHostKeyVerificationConfiguration:
     sshHostKeyVerificationStrategy: "knownHostsFileVerificationStrategy"
-  globalJobDslSecurityConfiguration:
-    useScriptSecurity: true
   sSHD:
     port: -1
   scriptApproval:
@@ -233,6 +231,8 @@ tool:
       name: "Default"
     - home: "git"
       name: "newgit"
+    - home: "git"
+      name: "testnewgit"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
